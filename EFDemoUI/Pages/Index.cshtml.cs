@@ -46,7 +46,7 @@ namespace EFDemoUI.Pages
             if (_db.People.Count() ==0)
             {
                 string text = System.IO.File.ReadAllText("generated.json");
-                var people = JsonSerializer.Deserialize<List<Address>>(text);
+                var people = JsonSerializer.Deserialize<List<Person>>(text);
                 _db.AddRange(people);
                 _db.SaveChanges();
 
